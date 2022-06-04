@@ -1,0 +1,43 @@
+// WAP to have two textboxes accepting 1 number each, and a button when pressed should show "product =" value of multiplication of two numbers 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sir's Stuff</title>
+    <script>
+        window.addEventListener('DOMContentLoaded',
+        ()=>{
+            const b1=document.querySelector("#b1");
+            b1.addEventListener('click',
+            ()=>{
+                const n1=document.querySelector("#t1");   
+                const n2=document.querySelector("#t2"); 
+                const msg=document.querySelector("#result");
+                msg.innerHTML= "product = "+multiply(t1.value, t2.value);
+            }
+            );
+            console.log("function called without gloabal");
+
+            function multiply(x,y){
+                return x*y;
+            }
+        }
+        );
+    </script>
+</head>
+<body>
+    <h1>MULTIPLICATION</h1>
+    <p>
+        Enter first number 
+        <input type="text" id="t1">
+        <br>
+        Enter second number
+        <input type="text" id="t2">
+        <hr>
+        <span id="result"> </span>
+    </p>
+    <p>
+        <input type="button" id="b1" value="Click for answer">
+    </p>
+</body>
+</html> 
