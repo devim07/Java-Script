@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Deatils</title>
+    <script>
+        window.addEventListener('DOMContentLoaded',()=>{
+            const tempno=document.querySelector("#tempno");
+            tempno.addEventListener('blur',()=>{
+                let emp1={empno:1, dept:10, loc:"Mumbai"};  
+                let emp2={empno:2, dept:20, loc:"Delhi"};  
+                let emp3={empno:3, dept:30, loc:"Kochin"};
+
+                const givenempno=tempno.value;
+                console.log(givenempno)
+                if(emp1.empno==givenempno){
+                    document.querySelector("#tdept").value=emp1.dept;
+                    document.querySelector("#tloc").value=emp1.loc;
+                }
+                else if(emp2.empno==givenempno){
+                    document.querySelector("#tdept").value=emp2.dept;
+                    document.querySelector("#tloc").value=emp2.loc;
+                }
+                else if(emp3.empno==givenempno){
+                    document.querySelector("#tdept").value=emp3.dept;
+                    document.querySelector("#tloc").value=emp3.loc;
+                }
+                else{
+                    document.querySelector("#tempno").value="Invalid Employee";
+                    document.querySelector("#tloc").value="Nil";
+                    document.querySelector("#tdept").value="Nil";
+                }
+
+            });
+        });
+    </script>
+</head>
+<body style="margin: 30px 30px;">
+    <input type="text" id="tempno" placeholder="Employee Number" style="width:200px; text-align:ceter;">
+    <br>
+
+    <input type="text" id="tdept" placeholder="Department ID" style="width:200px; text-align:ceter;">
+    <br>
+    
+    <input type="text" id="tloc" placeholder="Location" style="width:200px; text-align:ceter;">
+    <br>
+</body>
+</html>
